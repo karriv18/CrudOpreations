@@ -1,0 +1,8 @@
+{
+    "CRUD": {
+        "moduleKey": "PM",
+        "moduleCode": "PM",
+        "uploadDirectory": "CRUD",
+        "connectionString": "Server=DESKTOP-8TCFB3N;Database=PeopleManagement;TrustServerCertificate=true;MultipleActiveResultSets=True"
+    }
+}
