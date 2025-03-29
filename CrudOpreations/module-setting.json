@@ -1,8 +1,8 @@
 {
-    "CRUD": {
+    "UserManagement": {
         "moduleKey": "PM",
         "moduleCode": "PM",
-        "uploadDirectory": "CRUD",
-        "connectionString": "Server=DESKTOP-8TCFB3N;Database=PeopleManagement;TrustServerCertificate=true;MultipleActiveResultSets=True"
+        "uploadDirectory": "userManagement",
+        "connectionString": "server=DESKTOP-8TCFB3N;database=PeopleManagement;Integrated Security=true;TrustServerCertificate=true;"
     }
 }

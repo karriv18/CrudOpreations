@@ -1,7 +1,6 @@
 ﻿using System.Data;
 using CrudOpreations.Configurations;
 using Microsoft.Data.SqlClient;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 
 namespace CrudOpreations.Database;

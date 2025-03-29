@@ -1,6 +1,6 @@
 ﻿namespace CrudOpreations.Model.Request;
 
-public class PeopleRequest
+public class UserRequest
 {
 
     public required string FirstName { get; set; }

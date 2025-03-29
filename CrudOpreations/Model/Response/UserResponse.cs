@@ -1,6 +1,6 @@
 ﻿namespace CrudOpreations.Model.Response;
 
-public class PeopleResponse
+public class UserResponse
 {
     public required int Id { get; set; }
 
