@@ -15,7 +15,7 @@ namespace CrudOpreations.Controllers
             userManagementServices = _userManagementServices;
         }
         [HttpPost(ApiRoute.Create)]
-        public async Task<IActionResult> CreateUserAsync(UserRequest request, CancellationToken cancellationToken)
+        public async Task<IActionResult> CreateUserAsync([FromBody] UserRequest request, CancellationToken cancellationToken)
         {
             bool result = await userManagementServices.CreateAsync(request, cancellationToken);
 
@@ -41,7 +41,7 @@ namespace CrudOpreations.Controllers
         }
 
         [HttpPost(ApiRoute.Update)]
-        public async Task<IActionResult> UpdateUserAsync(int id, UserRequest request)
+        public async Task<IActionResult> UpdateUserAsync([FromQuery] int id,  [FromBody] UserRequest request)
         {
             var result = await userManagementServices.UpdateAsync(id, request);
             return Ok(result);

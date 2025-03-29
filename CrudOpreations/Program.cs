@@ -1,19 +1,19 @@
+using System.Text.Json;
 using CrudOpreations.Applications;
 using CrudOpreations.Configurations;
-using CrudOpreations.Applications;
 var builder = WebApplication.CreateBuilder(args);
 
-var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+var MyAllowSpecificOrigins = "AllowAll";
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: MyAllowSpecificOrigins,
         policy =>
         {
-            policy.WithOrigins("http://localhost:5173")
+            policy
+            .WithOrigins("http://localhost:5173")
             .AllowAnyHeader()
             .AllowAnyMethod()
-            .AllowAnyOrigin();
-
+            .AllowCredentials();
         });
 });
 // Add services to the container.
@@ -30,6 +30,13 @@ builder.Services
     .AddUserManagementModule<CrudSettings>()
     .AddUserDatabaseManagementModule();
 
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+    });
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -41,7 +48,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseCors(MyAllowSpecificOrigins);
 app.UseAuthorization();
+
 
 app.MapControllers();
 

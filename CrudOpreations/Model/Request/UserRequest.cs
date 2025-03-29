@@ -1,17 +1,23 @@
-﻿namespace CrudOpreations.Model.Request;
+﻿using System.Text.Json.Serialization;
+namespace CrudOpreations.Model.Request;
 
 public class UserRequest
 {
+    [JsonPropertyName("firstName")]
+    public required string FirstName { get; init; }
 
-    public required string FirstName { get; set; }
-    
-    public required string? MiddleName { get; set; }
-    
-    public required string LastName { get; set; }
+    [JsonPropertyName("middleName")]
+    public required string? MiddleName { get; init; }
 
-    public required string BirthDay { get; set; }
+    [JsonPropertyName("lastName")]
+    public required string LastName { get; init; }
 
-    public required string Email { get; set; }
+    [JsonPropertyName("birthDay")]
+    public required string BirthDay { get; init; }
 
-    public required string Password { get; set; }
+    [JsonPropertyName("email")]
+    public required string Email { get; init; }
+
+    [JsonPropertyName("password")]
+    public required string Password { get; init; }
 }
